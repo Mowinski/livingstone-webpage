@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<header class="s-header">
+    <div class="header-logo">
+        <a class="site-logo" href="index.html">
+            <img src="${require(`../images/logo.svg`)}" alt="Homepage"><div class="logo-font">VULpESOfT</div>
+        </a>
+    </div>
+    <nav class="header-nav">
+        <a href="#0" class="header-nav__close" title="close"><span>Close</span></a>
+        <div class="header-nav__content">
+            <h3>Vulpesoft Studio</h3>
+            <ul class="header-nav__list">
+                <li class="current"><a class="smoothscroll"  href="#home" title="home">Home</a></li>
+                <li><a class="smoothscroll"  href="#about" title="about">About</a></li>
+                <li><a class="smoothscroll"  href="#works" title="works">Game pics</a></li>
+                <li><a class="smoothscroll" href="#development-team" title="development team">Development team</a></li>
+                <li><a class="smoothscroll"  href="#contact" title="contact">Contact</a></li>
+            </ul>
+            <ul class="header-nav__social">
+                <li>
+                    <a href="https://www.facebook.com/Dr-Livingstone-I-presume-352710845537002/" target="_blank"><i class="fab fa-facebook"></i></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <a class="header-menu-toggle" href="#0">
+        <span class="header-menu-icon"></span>
+    </a>
+</header>
+
+{% endblock %}
