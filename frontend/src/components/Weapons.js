@@ -6,7 +6,6 @@ const Weapons = () => {
     const renderImage = (image) => (
         <div className={"col-sm-6 col-xs-12 col-md-" + image.span} key={image.id}>
             <img className="mx-auto d-flex rounded img-responsive" src={image.image} alt={image.name}/>
-            <p>{image.name}</p>
         </div>
     );
 
@@ -21,7 +20,7 @@ const Weapons = () => {
                             <h2 className="section-heading mb-4">
                                 <span className="section-heading-lower">Our Weapons</span>
                             </h2>
-                            <div className="row">
+                            <div className="row align-items-center">
                                 {images}
                             </div>
                         </div>

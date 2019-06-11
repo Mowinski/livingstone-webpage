@@ -5,7 +5,7 @@ from django.db.models import Max
 
 
 class GalleryImage(models.Model):
-    image = models.ImageField(verbose_name="Picture", help_text="size 900x600 px")
+    image = models.ImageField(verbose_name="Picture", help_text="size 900x700 px")
     name = models.CharField(
         max_length=25, verbose_name="Picture name", help_text="Max 25 characters"
     )

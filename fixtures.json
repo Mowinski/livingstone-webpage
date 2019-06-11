@@ -63,7 +63,7 @@
   "model": "LivingstoneWebpage.ourweapon",
   "pk": 2,
   "fields": {
-    "image": "perforce.jpeg",
+    "image": "perforce.png",
     "name": "Perforce",
     "order": 2,
     "span": 4

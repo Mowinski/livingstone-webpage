@@ -12,7 +12,7 @@ class GalleryImageSerializer(serializers.HyperlinkedModelSerializer):
 class OurWeaponSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.OurWeapon
-        fields = "__all__"
+        fields = ["image", "name", "span", "id"]
 
 
 class TeamMemberSerializer(serializers.HyperlinkedModelSerializer):
