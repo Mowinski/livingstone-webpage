@@ -29,6 +29,11 @@ const Navigation = () => {
                             </NavLink>
                         </li>
                         <li className="nav-item px-lg-4">
+                            <NavLink exact to="/team" className="nav-link text-uppercase text-expanded" activeClassName="active">
+                                Team
+                            </NavLink>
+                        </li>
+                        <li className="nav-item px-lg-4">
                             <NavLink exact to="/contact" className="nav-link text-uppercase text-expanded" activeClassName="active">
                                 Contact
                             </NavLink>

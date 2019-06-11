@@ -1,4 +1,5 @@
 from django.contrib.sites.models import Site
+from django.core import validators
 from django.db import models
 from django.db.models import Max
 
@@ -33,6 +34,13 @@ class OurWeapon(models.Model):
     image = models.ImageField(verbose_name="Picture")
     name = models.CharField(max_length=250, verbose_name="Tool name")
     order = models.IntegerField(default=0)
+    span = models.IntegerField(default=4,
+                               validators=[validators.MinValueValidator(1), validators.MaxValueValidator(12)],
+                               help_text="Digit between 1-12. How much space avatar should take. See bootstrap grid")
+
+    @classmethod
+    def get_highest_order(cls):
+        return cls.objects.all().aggregate(Max("order"))["order__max"]
 
     def __str__(self):
         return self.name
@@ -57,6 +65,12 @@ class TeamMember(models.Model):
     name = models.CharField(max_length=250, verbose_name="First and last name")
     position = models.CharField(max_length=3, choices=POSITION)
     order = models.IntegerField(default=0)
+    span = models.IntegerField(default=4, validators=[validators.MinValueValidator(1), validators.MaxValueValidator(12)],
+                               help_text="Digit between 1-12. How much space avatar should take. See bootstrap grid")
+
+    @classmethod
+    def get_highest_order(cls):
+        return cls.objects.all().aggregate(Max("order"))["order__max"]
 
     def __str__(self):
         return self.name

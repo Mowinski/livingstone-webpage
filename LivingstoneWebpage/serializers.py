@@ -16,9 +16,11 @@ class OurWeaponSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class TeamMemberSerializer(serializers.HyperlinkedModelSerializer):
+    position = serializers.CharField(source='get_position_display')
+
     class Meta:
         model = models.TeamMember
-        fields = "__all__"
+        fields = ["avatar", "name", "position", "span", "id"]
 
 
 class ConstantElementSerializer(serializers.HyperlinkedModelSerializer):

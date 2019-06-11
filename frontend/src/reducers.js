@@ -1,4 +1,4 @@
-import {SET_IMAGES, SET_ABOUT_TEXT, SET_CONTACT_TEXT} from './actions';
+import {SET_IMAGES, SET_ABOUT_TEXT, SET_CONTACT_TEXT, SET_TEAM_MEMBERS, SET_WEAPONS} from './actions';
 
 const appReducer = (state, action) => {
     switch (action.type) {
@@ -19,6 +19,20 @@ const appReducer = (state, action) => {
             return {
                 ...state,
                 contact_text: action.payload,
+            };
+
+        case SET_TEAM_MEMBERS:
+            action.payload.forEach((image) => preloadImage(image.avatar));
+            return {
+                ...state,
+                team_members: action.payload,
+            };
+
+        case SET_WEAPONS:
+            action.payload.forEach((image) => preloadImage(image.image));
+            return {
+                ...state,
+                weapons: action.payload,
             };
 
         default:

@@ -39,6 +39,7 @@ urlpatterns = [
     path("", views.HomePageView.as_view(), name="home"),
     path("about", views.HomePageView.as_view(), name="about"),
     path("gallery", views.HomePageView.as_view(), name="gallery"),
+    path("team", views.HomePageView.as_view(), name="team"),
     path("contact", views.HomePageView.as_view(), name="contact"),
     path(
         "sitemap.xml",

@@ -9,10 +9,11 @@ import Footer from "./Footer";
 import Gallery from "./Gallery";
 import Contact from "./Contact";
 import appReducer from "../reducers";
-import { getGalleryImages, getConstantText } from "../services";
-import { SET_ABOUT_TEXT, SET_IMAGES, SET_CONTACT_TEXT } from "../actions";
+import { getGalleryImages, getConstantText, getTeamMembers, getWeapons } from "../services";
+import {SET_ABOUT_TEXT, SET_IMAGES, SET_CONTACT_TEXT, SET_TEAM_MEMBERS, SET_WEAPONS} from "../actions";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faFacebookSquare, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import Team from "./Team";
 
 library.add(faFacebookSquare, faTwitter, faInstagram);
 
@@ -20,6 +21,8 @@ library.add(faFacebookSquare, faTwitter, faInstagram);
 export const StateContext = React.createContext({});
 const initialState = {
     'gallery_images': [],
+    'team_members': [],
+    'weapons': [],
     'about_text': '',
     'contact_text': '',
 };
@@ -37,9 +40,17 @@ const App = () => {
         async function fetchContactText() {
             dispatch({'type': SET_CONTACT_TEXT, 'payload': await getConstantText('contact')});
         }
+        async function fetchTeamMember() {
+            dispatch({'type': SET_TEAM_MEMBERS, 'payload': await getTeamMembers()});
+        }
+        async function fetchWeapons() {
+            dispatch({'type': SET_WEAPONS, 'payload': await getWeapons()});
+        }
         fetchGallery();
         fetchAboutText();
         fetchContactText();
+        fetchTeamMember();
+        fetchWeapons();
     }, []);
 
     return (
@@ -51,6 +62,7 @@ const App = () => {
                 <Route exact path="/" component={Home} />
                 <Route exact path="/about" component={About}/>
                 <Route exact path="/gallery" component={Gallery}/>
+                <Route exact path="/team" component={Team}/>
                 <Route exect path="/contact" component={Contact}/>
                 <Footer/>
             </StateContext.Provider>

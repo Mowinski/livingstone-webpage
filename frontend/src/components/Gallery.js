@@ -15,7 +15,7 @@ const Gallery = () => {
                 </div>);
         }
         return (
-            <div className="col-4" key={image.id}>
+            <div className="col-md-12 col-sm-12" key={image.id}>
                 <div className="product-item">
                     <div className="product-item-title d-flex">
                         <div className="bg-faded p-5 d-flex ml-auto rounded">
@@ -24,25 +24,21 @@ const Gallery = () => {
                             </h2>
                         </div>
                     </div>
-                    <img className="product-item-img mx-auto d-flex rounded mb-3 mb-lg-0 img-fluid" src={image.image}
-                         alt=""/>
+                    <img className="product-item-img mx-auto mx-sm-0 d-flex rounded mb-3 mb-lg-0 img-responsive" src={image.image}
+                         alt={image.name}/>
                     {description}
                 </div>
             </div>
         );
     };
 
-    const renderImages = () => {
-        let htmlImages = [];
-        stateContext.state.gallery_images.forEach((image) => htmlImages.push(renderImage(image)));
-        return htmlImages;
-    };
+    let images = stateContext.state.gallery_images.map((image) => renderImage(image));
 
     return (
         <section className="page-section">
             <div className="container">
                 <div className="row">
-                    {renderImages()}
+                    {images}
                 </div>
             </div>
         </section>

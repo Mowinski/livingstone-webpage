@@ -2,6 +2,7 @@ import React from "react";
 import about from "../images/about.jpg";
 import ReactSafeHtml from "react-safe-html";
 import {StateContext} from "./App";
+import ContactForm from "./ContactForm";
 
 const Contact = () => {
     const stateContext = React.useContext(StateContext);
@@ -16,6 +17,11 @@ const Contact = () => {
                             <div className="bg-faded rounded p-5">
                                 <ReactSafeHtml html={stateContext.state.contact_text}/>
                             </div>
+                        </div>
+                    </div>
+                    <div className="row mt-3">
+                        <div className="col-12 mx-auto">
+                            <ContactForm/>
                         </div>
                     </div>
                 </div>

@@ -12,7 +12,14 @@ export function getConstantText(key) {
 
 export function addContractEmail(email) {
     return axios.post(MAILCHAMP_URL, {'EMAIL': email}).then(r => {
-        console.log(r);
         return r;
-    })
+    });
+}
+
+export function getTeamMembers() {
+    return axios.get(API_URL + 'team/members/').then(r => r.data);
+}
+
+export function getWeapons() {
+    return axios.get(API_URL + 'weapons/').then(r => r.data);
 }

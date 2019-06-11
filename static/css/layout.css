@@ -184,6 +184,10 @@ a.active {
   }
 }
 
+.product-item-title {
+  margin-top: 3rem;
+}
+
 @media (min-width: 992px) {
   .product-item .product-item-title {
     position: relative;
