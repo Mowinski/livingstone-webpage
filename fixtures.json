@@ -1,0 +1,206 @@
+[
+{
+  "model": "LivingstoneWebpage.galleryimage",
+  "pk": 1,
+  "fields": {
+    "image": "InsideofLivingstone3b.jpg",
+    "name": "Livingstone Game LIVINGSTO",
+    "description": "Fusce vitae pretium diam. Vestibulum sollicitudin a dolor sed convallis. Nulla nec finibus urna, sit amet convallis ipsum. Maecenas metus ante, consectetur sit amet congue a, efficitur non ante. Etiam ac odio placerat arcu efficitur commodo.",
+    "order": 0
+  }
+},
+{
+  "model": "LivingstoneWebpage.galleryimage",
+  "pk": 2,
+  "fields": {
+    "image": "chair.jpg",
+    "name": "Chair",
+    "description": "",
+    "order": 1
+  }
+},
+{
+  "model": "LivingstoneWebpage.galleryimage",
+  "pk": 3,
+  "fields": {
+    "image": "Kataminobox2.jpg",
+    "name": "Katamino",
+    "description": "",
+    "order": 3
+  }
+},
+{
+  "model": "LivingstoneWebpage.galleryimage",
+  "pk": 4,
+  "fields": {
+    "image": "stove.jpg",
+    "name": "Stove",
+    "description": "Fusce vitae pretium diam. Vestibulum sollicitudin a dolor sed convallis. Nulla nec finibus urna, sit amet convallis ipsum. Maecenas metus ante, consectetur sit amet congue a, efficitur non ante. Etiam ac odio placerat arcu efficitur commodo.",
+    "order": 4
+  }
+},
+{
+  "model": "LivingstoneWebpage.galleryimage",
+  "pk": 5,
+  "fields": {
+    "image": "Kitchen_big_cupboard02.jpg",
+    "name": "Cupboard",
+    "description": "Fusce vitae pretium diam. Vestibulum sollicitudin a dolor sed convallis. Nulla nec finibus urna, sit amet convallis ipsum. Maecenas metus ante, consectetur sit amet congue a, efficitur non ante. Etiam ac odio placerat arcu efficitur commodo.",
+    "order": 2
+  }
+},
+{
+  "model": "LivingstoneWebpage.ourweapon",
+  "pk": 1,
+  "fields": {
+    "image": "ue.png",
+    "name": "Unreal Engine",
+    "order": 1,
+    "span": 4
+  }
+},
+{
+  "model": "LivingstoneWebpage.ourweapon",
+  "pk": 2,
+  "fields": {
+    "image": "perforce.jpeg",
+    "name": "Perforce",
+    "order": 2,
+    "span": 4
+  }
+},
+{
+  "model": "LivingstoneWebpage.ourweapon",
+  "pk": 3,
+  "fields": {
+    "image": "blender.png",
+    "name": "Blender",
+    "order": 3,
+    "span": 4
+  }
+},
+{
+  "model": "LivingstoneWebpage.ourweapon",
+  "pk": 4,
+  "fields": {
+    "image": "twine.png",
+    "name": "Twine",
+    "order": 4,
+    "span": 4
+  }
+},
+{
+  "model": "LivingstoneWebpage.teammember",
+  "pk": 1,
+  "fields": {
+    "avatar": "adam.png",
+    "name": "Adam Dawidowicz",
+    "position": "ca",
+    "order": 2,
+    "span": 4
+  }
+},
+{
+  "model": "LivingstoneWebpage.teammember",
+  "pk": 2,
+  "fields": {
+    "avatar": "agata.png",
+    "name": "Agata Le\u015b",
+    "position": "gp",
+    "order": 1,
+    "span": 6
+  }
+},
+{
+  "model": "LivingstoneWebpage.teammember",
+  "pk": 3,
+  "fields": {
+    "avatar": "damian.png",
+    "name": "Damian Frycz",
+    "position": "lgd",
+    "order": 2,
+    "span": 6
+  }
+},
+{
+  "model": "LivingstoneWebpage.teammember",
+  "pk": 4,
+  "fields": {
+    "avatar": "ida.png",
+    "name": "Ida \u0141ukasiewicz",
+    "position": "3d",
+    "order": 5,
+    "span": 12
+  }
+},
+{
+  "model": "LivingstoneWebpage.teammember",
+  "pk": 5,
+  "fields": {
+    "avatar": "jola.png",
+    "name": "Jolanta Szymanowska",
+    "position": "lca",
+    "order": 4,
+    "span": 4
+  }
+},
+{
+  "model": "LivingstoneWebpage.teammember",
+  "pk": 6,
+  "fields": {
+    "avatar": "kamil.png",
+    "name": "Kamil M\u00f3wi\u0144ski",
+    "position": "pl",
+    "order": 5,
+    "span": 4
+  }
+},
+{
+  "model": "LivingstoneWebpage.teammember",
+  "pk": 7,
+  "fields": {
+    "avatar": "michal.png",
+    "name": "Micha\u0142 Le\u015bniak",
+    "position": "ca",
+    "order": 6,
+    "span": 4
+  }
+},
+{
+  "model": "LivingstoneWebpage.teammember",
+  "pk": 8,
+  "fields": {
+    "avatar": "tomasz.png",
+    "name": "Tomasz Przydzia\u0142",
+    "position": "3d",
+    "order": 7,
+    "span": 4
+  }
+},
+{
+  "model": "LivingstoneWebpage.constantelement",
+  "pk": "about",
+  "fields": {
+    "text": "<h2 className=\"section-heading mb-4\">\r\n                                <span className=\"section-heading-upper\">Strong Coffee, Strong Roots</span>\r\n                                <span className=\"section-heading-lower\">About Our Cafe</span>\r\n                            </h2>\r\n                            <p>\r\n                                Founded in 1987 by the Hernandez brothers, our establishment has been serving up rich\r\n                                coffee sourced from artisan farmers in various regions of South and Central America.\r\n                                We are dedicated to travelling the world, finding the best coffee, and bringing back\r\n                                to you here in our cafe.\r\n                            </p>\r\n                            <p className=\"mb-0\">\r\n                                We guarantee that you will fall in <em>lust</em> with our decadent\r\n                                blends the moment you walk inside until you finish your last sip. Join us for your\r\n                                daily routine, an outing with friends, or simply just to enjoy some alone time.\r\n                            </p>",
+    "image": ""
+  }
+},
+{
+  "model": "LivingstoneWebpage.constantelement",
+  "pk": "contact",
+  "fields": {
+    "text": "in nisi a nunc sollicitudin sollicitudin. Etiam tincidunt faucibus nibh quis lobortis. Nulla efficitur nunc eget enim mollis, ut vulputate nunc maximus. Fusce accumsan scelerisque tincidunt. Morbi quis lacus orci. Nulla tristique maximus erat, a mattis velit feugiat vel. Proin interdum consequat dui, et fringilla elit viverra vel. Aliquam at luctus risus, non suscipit nunc. Aliquam erat volutpat. Nunc vel metus ante.\r\n\r\nMauris vitae commodo nisl. Sed tempor facilisis rhoncus. Cras tincidunt turpis nisi, ut suscipit libero scelerisque congue. Praesent libero erat, lobortis sit amet finibus eu, laoreet non orci. Nunc vitae justo varius libero tempus tincidunt id faucibus libero. Suspendisse egestas condimentum mauris, at maximus quam laoreet vitae. Nulla scelerisque justo vel dapibus ultrices. Praesent scelerisque risus scelerisque aliquam sodales. Duis eros lectus, maximus et sollicitudin vitae, auctor in tellus. Ut eget mauris varius, luctus arcu commodo, consequat nisl. Donec vulputate dictum nisl, sed placerat nibh semper non. Pellentesque accumsan commodo sodales. Curabitur tincidunt facilisis quam vel faucibus. Donec quis lectus sit amet nibh porttitor eleifend ac vel purus. Aliquam hendrerit lectus sed ligula pretium rutrum.\r\n\r\nIn egestas, nulla vitae tempor pharetra, tellus nulla porttitor nibh, vitae malesuada massa mi et magna. Vestibulum rhoncus quam a pharetra mattis. Sed pharetra mauris diam, nec volutpat massa euismod non. Aliquam sagittis dui ex, ut vestibulum mauris fringilla at. Fusce vehicula mollis orci sit amet egestas. Nunc condimentum augue nibh, et bibendum sapien molestie ut. Pellentesque rhoncus gravida felis non finibus. In sed posuere felis. Vestibulum malesuada lacus turpis, eget vestibulum justo vestibulum commodo. Nulla facilisi.",
+    "image": ""
+  }
+},
+{
+  "model": "LivingstoneWebpage.seometadata",
+  "pk": 1,
+  "fields": {
+    "site": 2,
+    "title": "Localhost",
+    "description": "desc",
+    "keywords": "key,word"
+  }
+}
+]
