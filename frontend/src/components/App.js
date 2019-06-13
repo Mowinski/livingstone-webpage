@@ -10,7 +10,7 @@ import Gallery from "./Gallery";
 import Contact from "./Contact";
 import appReducer from "../reducers";
 import { getGalleryImages, getConstantText, getTeamMembers, getWeapons } from "../services";
-import {SET_ABOUT_TEXT, SET_IMAGES, SET_CONTACT_TEXT, SET_TEAM_MEMBERS, SET_WEAPONS} from "../actions";
+import {SET_ABOUT, SET_IMAGES, SET_CONTACT_TEXT, SET_TEAM_MEMBERS, SET_WEAPONS} from "../actions";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faFacebookSquare, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import Team from "./Team";
@@ -24,6 +24,7 @@ const initialState = {
     'team_members': [],
     'weapons': [],
     'about_text': '',
+    'about_image': '',
     'contact_text': '',
 };
 
@@ -35,7 +36,7 @@ const App = () => {
             dispatch({'type': SET_IMAGES, 'payload': await getGalleryImages()});
         }
         async function fetchAboutText() {
-            dispatch({'type': SET_ABOUT_TEXT, 'payload': await getConstantText('about')});
+            dispatch({'type': SET_ABOUT, 'payload': await getConstantText('about')});
         }
         async function fetchContactText() {
             dispatch({'type': SET_CONTACT_TEXT, 'payload': await getConstantText('contact')});

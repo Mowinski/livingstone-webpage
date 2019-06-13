@@ -9,12 +9,11 @@ import Weapons from "./Weapons";
 
 const About = () => {
     const stateContext = React.useContext(StateContext);
-
     return (
         <>
             <section className="page-section about-heading">
                 <div className="container">
-                    <img className="img-fluid rounded about-heading-img mb-3 mb-lg-0" src={about} alt=""/>
+                    <img className="img-fluid rounded about-heading-img mb-3 mb-lg-0" src={stateContext.state.about_image} alt=""/>
                     <div className="about-heading-content">
                         <div className="row">
                             <div className="col-xl-9 col-lg-10 mx-auto">

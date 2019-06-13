@@ -7,7 +7,7 @@ export function getGalleryImages() {
 }
 
 export function getConstantText(key) {
-    return axios.get(API_URL + `constant/elements/${key}/`).then(r => r.data.text);
+    return axios.get(API_URL + `constant/elements/${key}/`).then(r => r.data);
 }
 
 export function addContractEmail(email) {
