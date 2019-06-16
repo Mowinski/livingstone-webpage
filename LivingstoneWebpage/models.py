@@ -101,6 +101,7 @@ class ConstantElement(models.Model):
         null=True, default=None, blank=True, verbose_name="Picture",
         help_text="About image: 1900x710px",
     )
+    link = models.URLField(null=True, default=None, blank=True, verbose_name="Link")
 
     def __str__(self):
         return self.key

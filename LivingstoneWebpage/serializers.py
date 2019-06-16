@@ -26,4 +26,4 @@ class TeamMemberSerializer(serializers.HyperlinkedModelSerializer):
 class ConstantElementSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.ConstantElement
-        fields = "__all__"
+        fields = ["key", "text", "image", "link"]

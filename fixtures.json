@@ -193,6 +193,33 @@
     "image": ""
   }
 },
+  {
+  "model": "LivingstoneWebpage.constantelement",
+  "pk": "facebook",
+  "fields": {
+    "text": "",
+    "image": "",
+    "link": "https://www.facebook.com/drlivingstonegame"
+  }
+},
+{
+  "model": "LivingstoneWebpage.constantelement",
+  "pk": "instagram",
+  "fields": {
+    "text": "",
+    "image": "",
+    "link": "https://www.instagram.com/livingstone_game/"
+  }
+},
+{
+  "model": "LivingstoneWebpage.constantelement",
+  "pk": "twitter",
+  "fields": {
+    "text": "",
+    "image": "",
+    "link": "https://twitter.com/Livi_TheGame"
+  }
+},
 {
   "model": "LivingstoneWebpage.seometadata",
   "pk": 1,

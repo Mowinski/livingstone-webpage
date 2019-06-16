@@ -1,4 +1,4 @@
-import {SET_IMAGES, SET_ABOUT, SET_CONTACT, SET_TEAM_MEMBERS, SET_WEAPONS} from './actions';
+import {SET_IMAGES, SET_ABOUT, SET_CONTACT, SET_TEAM_MEMBERS, SET_WEAPONS, SET_LINKS} from './actions';
 
 const appReducer = (state, action) => {
     switch (action.type) {
@@ -37,6 +37,13 @@ const appReducer = (state, action) => {
             return {
                 ...state,
                 weapons: action.payload,
+            };
+        case SET_LINKS:
+            const links = {};
+            action.payload.map((link) => links[link.key] = link.link);
+            return {
+                ...state,
+                links: {...links},
             };
 
         default:

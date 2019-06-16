@@ -1,11 +1,13 @@
 from django.contrib.sites.models import Site
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import cache_page
+from rest_framework.decorators import action
+from rest_framework.response import Response
 
 from LivingstoneWebpage import models, serializers
 
 from django.views.generic import TemplateView
-from rest_framework import viewsets
+from rest_framework import viewsets, generics
 
 
 class GalleryImageViewSet(viewsets.ReadOnlyModelViewSet):
@@ -26,6 +28,13 @@ class TeamMemberViewSet(viewsets.ReadOnlyModelViewSet):
 class ConstantElementViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.ConstantElement.objects.all()
     serializer_class = serializers.ConstantElementSerializer
+
+    @action(detail=False)
+    def links(self, request):
+        queryset = self.get_queryset().filter(link__isnull=False)
+        serializer = self.get_serializer(queryset, many=True)
+        return Response(serializer.data)
+
 
 
 @method_decorator(cache_page(60 * 30), name="dispatch")

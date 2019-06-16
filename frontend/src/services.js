@@ -23,3 +23,7 @@ export function getTeamMembers() {
 export function getWeapons() {
     return axios.get(API_URL + 'weapons/').then(r => r.data);
 }
+
+export function getLinks() {
+    return axios.get(API_URL + 'constant/elements/links/').then(r => r.data);
+}

@@ -9,8 +9,8 @@ import Footer from "./Footer";
 import Gallery from "./Gallery";
 import Contact from "./Contact";
 import appReducer from "../reducers";
-import { getGalleryImages, getConstantText, getTeamMembers, getWeapons } from "../services";
-import {SET_ABOUT, SET_IMAGES, SET_CONTACT, SET_TEAM_MEMBERS, SET_WEAPONS} from "../actions";
+import {getGalleryImages, getConstantText, getTeamMembers, getWeapons, getLinks} from "../services";
+import {SET_ABOUT, SET_IMAGES, SET_CONTACT, SET_TEAM_MEMBERS, SET_WEAPONS, SET_LINKS} from "../actions";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faFacebookSquare, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import Team from "./Team";
@@ -23,6 +23,11 @@ const initialState = {
     'gallery_images': [],
     'team_members': [],
     'weapons': [],
+    'links': {
+        'facebook': '',
+        'twitter': '',
+        'instagram': '',
+    },
     'about_text': '',
     'about_image': '',
     'contact_text': '',
@@ -48,11 +53,15 @@ const App = () => {
         async function fetchWeapons() {
             dispatch({'type': SET_WEAPONS, 'payload': await getWeapons()});
         }
+        async function fetchLinks() {
+            dispatch({'type': SET_LINKS, 'payload': await getLinks()});
+        }
         fetchGallery();
         fetchAboutText();
         fetchContactText();
         fetchTeamMember();
         fetchWeapons();
+        fetchLinks();
     }, []);
 
     return (
