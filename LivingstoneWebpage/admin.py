@@ -26,7 +26,7 @@ class GalleryImageAdmin(MoveUpDownMixin, admin.ModelAdmin):
         return {"order": models.GalleryImage.get_highest_order() + 1}
 
     image_tag.short_description = "Image"
-    list_display = ["name", "image_tag", "order"]
+    list_display = ["name", "image_tag", "order", "span"]
     readonly_fields = ["image_tag"]
 
 
@@ -57,5 +57,6 @@ class OurWeaponAdmin(MoveUpDownMixin, admin.ModelAdmin):
 admin.site.register(models.GalleryImage, GalleryImageAdmin)
 admin.site.register(models.OurWeapon, OurWeaponAdmin)
 admin.site.register(models.ConstantElement)
+admin.site.register(models.PositionName)
 admin.site.register(models.TeamMember, TeamMemberAdmin)
 admin.site.register(models.SeoMetaData)

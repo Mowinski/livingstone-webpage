@@ -6,7 +6,7 @@ from rest_framework import serializers
 class GalleryImageSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.GalleryImage
-        fields = ["image", "name", "description", "id"]
+        fields = ["image", "name", "description", "span", "id"]
 
 
 class OurWeaponSerializer(serializers.HyperlinkedModelSerializer):
@@ -16,7 +16,7 @@ class OurWeaponSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class TeamMemberSerializer(serializers.HyperlinkedModelSerializer):
-    position = serializers.CharField(source='get_position_display')
+    position = serializers.StringRelatedField()
 
     class Meta:
         model = models.TeamMember

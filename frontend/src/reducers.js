@@ -1,4 +1,4 @@
-import {SET_IMAGES, SET_ABOUT, SET_CONTACT_TEXT, SET_TEAM_MEMBERS, SET_WEAPONS} from './actions';
+import {SET_IMAGES, SET_ABOUT, SET_CONTACT, SET_TEAM_MEMBERS, SET_WEAPONS} from './actions';
 
 const appReducer = (state, action) => {
     switch (action.type) {
@@ -17,10 +17,12 @@ const appReducer = (state, action) => {
                 about_image: action.payload.image
             };
 
-        case SET_CONTACT_TEXT:
+        case SET_CONTACT:
+            preloadImage(action.payload.image);
             return {
                 ...state,
-                contact_text: action.payload,
+                contact_text: action.payload.text,
+                contact_image: action.payload.image,
             };
 
         case SET_TEAM_MEMBERS:

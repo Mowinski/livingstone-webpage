@@ -1,7 +1,6 @@
 import React from "react";
 import ReactSafeHtml from "react-safe-html";
 
-import about from "../images/about.jpg";
 import {StateContext} from "./App";
 import Weapons from "./Weapons";
 

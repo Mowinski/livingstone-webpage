@@ -5,7 +5,7 @@ from django.db.models import Max
 
 
 class GalleryImage(models.Model):
-    image = models.ImageField(verbose_name="Picture", help_text="size 900x700 px")
+    image = models.ImageField(verbose_name="Picture", help_text="size 900x700 px (square size 300x175px)")
     name = models.CharField(
         max_length=25, verbose_name="Picture name", help_text="Max 25 characters"
     )
@@ -17,6 +17,9 @@ class GalleryImage(models.Model):
         max_length=250,
         help_text="Max 250 characters",
     )
+    span = models.IntegerField(default=4,
+                               validators=[validators.MinValueValidator(1), validators.MaxValueValidator(12)],
+                               help_text="Digit between 1-12. How much space image should take. See bootstrap grid")
     order = models.IntegerField(default=0)
 
     @classmethod
@@ -49,6 +52,16 @@ class OurWeapon(models.Model):
         ordering = ["order"]
 
 
+class PositionName(models.Model):
+    name = models.CharField(max_length=100, help_text="Position name")
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        ordering = ["name"]
+
+
 class TeamMember(models.Model):
     POSITION = (
         ("pl", "Project Leader"),
@@ -56,14 +69,14 @@ class TeamMember(models.Model):
         ("lgd", "Lead Game Designer"),
         ("ca", "Concept Artist"),
         ("3d", "3D Graphic"),
-        ("gp", "Gameplay programmer"),
+        ("gp", "Gameplay Programmer"),
         ("p", "Producer"),
         ("ss", "Social Specialist"),
     )
 
     avatar = models.ImageField(verbose_name="Avatar")
     name = models.CharField(max_length=250, verbose_name="First and last name")
-    position = models.CharField(max_length=3, choices=POSITION)
+    position = models.ForeignKey(PositionName, null=True, blank=True, default=None, on_delete=models.SET_NULL)
     order = models.IntegerField(default=0)
     span = models.IntegerField(default=4, validators=[validators.MinValueValidator(1), validators.MaxValueValidator(12)],
                                help_text="Digit between 1-12. How much space avatar should take. See bootstrap grid")
@@ -85,7 +98,8 @@ class ConstantElement(models.Model):
     )
     text = models.TextField(null=True, default=None, blank=True, verbose_name="Text")
     image = models.ImageField(
-        null=True, default=None, blank=True, verbose_name="Picture"
+        null=True, default=None, blank=True, verbose_name="Picture",
+        help_text="About image: 1900x710px",
     )
 
     def __str__(self):

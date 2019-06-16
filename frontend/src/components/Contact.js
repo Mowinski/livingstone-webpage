@@ -1,5 +1,4 @@
 import React from "react";
-import about from "../images/about.jpg";
 import ReactSafeHtml from "react-safe-html";
 import {StateContext} from "./App";
 import ContactForm from "./ContactForm";
@@ -10,7 +9,7 @@ const Contact = () => {
     return (
         <section className="page-section about-heading">
             <div className="container">
-                <img className="img-fluid rounded about-heading-img mb-3 mb-lg-0" src={about} alt=""/>
+                <img className="img-fluid rounded about-heading-img mb-3 mb-lg-0" src={stateContext.state.contact_image} alt=""/>
                 <div className="about-heading-content">
                     <div className="row">
                         <div className="col-xl-9 col-lg-10 mx-auto">
@@ -28,6 +27,6 @@ const Contact = () => {
             </div>
         </section>
     );
-}
+};
 
 export default Contact
