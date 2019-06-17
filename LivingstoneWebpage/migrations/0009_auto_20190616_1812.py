@@ -5,29 +5,49 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('LivingstoneWebpage', '0008_auto_20190614_0515'),
-    ]
+    dependencies = [("LivingstoneWebpage", "0008_auto_20190614_0515")]
 
     operations = [
         migrations.CreateModel(
-            name='PositionName',
+            name="PositionName",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(help_text='Position name', max_length=100)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(help_text="Position name", max_length=100)),
             ],
-            options={
-                'ordering': ['name'],
-            },
+            options={"ordering": ["name"]},
         ),
         migrations.AlterField(
-            model_name='galleryimage',
-            name='image',
-            field=models.ImageField(help_text='size 900x700 px (square size 300x175px)', upload_to='', verbose_name='Picture'),
+            model_name="galleryimage",
+            name="image",
+            field=models.ImageField(
+                help_text="size 900x700 px (square size 300x175px)",
+                upload_to="",
+                verbose_name="Picture",
+            ),
         ),
         migrations.AlterField(
-            model_name='teammember',
-            name='position',
-            field=models.CharField(choices=[('pl', 'Project Leader'), ('lca', 'Lead Concept Artist'), ('lgd', 'Lead Game Designer'), ('ca', 'Concept Artist'), ('3d', '3D Graphic'), ('gp', 'Gameplay Programmer'), ('p', 'Producer'), ('ss', 'Social Specialist')], max_length=3),
+            model_name="teammember",
+            name="position",
+            field=models.CharField(
+                choices=[
+                    ("pl", "Project Leader"),
+                    ("lca", "Lead Concept Artist"),
+                    ("lgd", "Lead Game Designer"),
+                    ("ca", "Concept Artist"),
+                    ("3d", "3D Graphic"),
+                    ("gp", "Gameplay Programmer"),
+                    ("p", "Producer"),
+                    ("ss", "Social Specialist"),
+                ],
+                max_length=3,
+            ),
         ),
     ]

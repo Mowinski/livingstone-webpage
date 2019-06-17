@@ -3,9 +3,13 @@ from django.core import validators
 from django.db import models
 from django.db.models import Max
 
+from LivingstoneWebpage import utils
+
 
 class GalleryImage(models.Model):
-    image = models.ImageField(verbose_name="Picture", help_text="size 900x700 px (square size 300x175px)")
+    image = models.ImageField(
+        verbose_name="Picture", help_text="size 900x700 px (square size 300x175px)"
+    )
     name = models.CharField(
         max_length=25, verbose_name="Picture name", help_text="Max 25 characters"
     )
@@ -17,14 +21,20 @@ class GalleryImage(models.Model):
         max_length=250,
         help_text="Max 250 characters",
     )
-    span = models.IntegerField(default=4,
-                               validators=[validators.MinValueValidator(1), validators.MaxValueValidator(12)],
-                               help_text="Digit between 1-12. How much space image should take. See bootstrap grid")
+    span = models.IntegerField(
+        default=4,
+        validators=[validators.MinValueValidator(1), validators.MaxValueValidator(12)],
+        help_text="Digit between 1-12. How much space image should take. See bootstrap grid",
+    )
     order = models.IntegerField(default=0)
 
     @classmethod
     def get_highest_order(cls):
         return cls.objects.all().aggregate(Max("order"))["order__max"]
+
+    def save(self, *args, **kwargs):
+        self.image = utils.save_to_webp(self.image)
+        super(GalleryImage, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.name
@@ -37,13 +47,19 @@ class OurWeapon(models.Model):
     image = models.ImageField(verbose_name="Picture")
     name = models.CharField(max_length=250, verbose_name="Tool name")
     order = models.IntegerField(default=0)
-    span = models.IntegerField(default=4,
-                               validators=[validators.MinValueValidator(1), validators.MaxValueValidator(12)],
-                               help_text="Digit between 1-12. How much space avatar should take. See bootstrap grid")
+    span = models.IntegerField(
+        default=4,
+        validators=[validators.MinValueValidator(1), validators.MaxValueValidator(12)],
+        help_text="Digit between 1-12. How much space avatar should take. See bootstrap grid",
+    )
 
     @classmethod
     def get_highest_order(cls):
         return cls.objects.all().aggregate(Max("order"))["order__max"]
+
+    def save(self, *args, **kwargs):
+        self.image = utils.save_to_webp(self.image)
+        super(OurWeapon, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.name
@@ -76,14 +92,23 @@ class TeamMember(models.Model):
 
     avatar = models.ImageField(verbose_name="Avatar")
     name = models.CharField(max_length=250, verbose_name="First and last name")
-    position = models.ForeignKey(PositionName, null=True, blank=True, default=None, on_delete=models.SET_NULL)
+    position = models.ForeignKey(
+        PositionName, null=True, blank=True, default=None, on_delete=models.SET_NULL
+    )
     order = models.IntegerField(default=0)
-    span = models.IntegerField(default=4, validators=[validators.MinValueValidator(1), validators.MaxValueValidator(12)],
-                               help_text="Digit between 1-12. How much space avatar should take. See bootstrap grid")
+    span = models.IntegerField(
+        default=4,
+        validators=[validators.MinValueValidator(1), validators.MaxValueValidator(12)],
+        help_text="Digit between 1-12. How much space avatar should take. See bootstrap grid",
+    )
 
     @classmethod
     def get_highest_order(cls):
         return cls.objects.all().aggregate(Max("order"))["order__max"]
+
+    def save(self, *args, **kwargs):
+        self.avatar = utils.save_to_webp(self.avatar)
+        super(TeamMember, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.name
@@ -98,10 +123,18 @@ class ConstantElement(models.Model):
     )
     text = models.TextField(null=True, default=None, blank=True, verbose_name="Text")
     image = models.ImageField(
-        null=True, default=None, blank=True, verbose_name="Picture",
+        null=True,
+        default=None,
+        blank=True,
+        verbose_name="Picture",
         help_text="About image: 1900x710px",
     )
     link = models.URLField(null=True, default=None, blank=True, verbose_name="Link")
+
+    def save(self, *args, **kwargs):
+        if self.image:
+            self.image = utils.save_to_webp(self.image)
+        super(ConstantElement, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.key

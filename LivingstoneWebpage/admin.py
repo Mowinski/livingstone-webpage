@@ -6,13 +6,13 @@ from LivingstoneWebpage import models
 
 
 class MoveUpDownMixin:
-    actions = ['move_up', 'move_down']
+    actions = ["move_up", "move_down"]
 
     def move_up(self, request, queryset):
-        queryset.update(order=F('order') - 1)
+        queryset.update(order=F("order") - 1)
 
     def move_down(self, request, queryset):
-        queryset.update(order=F('order') + 1)
+        queryset.update(order=F("order") + 1)
 
     move_up.short_description = "Move one position up"
     move_down.short_description = "Move one position down"

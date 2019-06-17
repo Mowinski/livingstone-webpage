@@ -5,13 +5,6 @@ from django.db import migrations
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('LivingstoneWebpage', '0011_teammember_position_name'),
-    ]
+    dependencies = [("LivingstoneWebpage", "0011_teammember_position_name")]
 
-    operations = [
-        migrations.RemoveField(
-            model_name='teammember',
-            name='position',
-        ),
-    ]
+    operations = [migrations.RemoveField(model_name="teammember", name="position")]

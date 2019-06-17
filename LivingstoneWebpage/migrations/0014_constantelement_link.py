@@ -5,14 +5,14 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('LivingstoneWebpage', '0013_auto_20190616_1823'),
-    ]
+    dependencies = [("LivingstoneWebpage", "0013_auto_20190616_1823")]
 
     operations = [
         migrations.AddField(
-            model_name='constantelement',
-            name='link',
-            field=models.URLField(blank=True, default=None, null=True, verbose_name='Link'),
-        ),
+            model_name="constantelement",
+            name="link",
+            field=models.URLField(
+                blank=True, default=None, null=True, verbose_name="Link"
+            ),
+        )
     ]

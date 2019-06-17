@@ -5,7 +5,7 @@ from LivingstoneWebpage.models import TeamMember
 
 
 def populate_db(apps, _):
-    PositionName = apps.get_model('LivingstoneWebpage', 'PositionName')
+    PositionName = apps.get_model("LivingstoneWebpage", "PositionName")
 
     for position in TeamMember.POSITION:
         PositionName.objects.create(name=position[1])
@@ -13,10 +13,6 @@ def populate_db(apps, _):
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('LivingstoneWebpage', '0009_auto_20190616_1812'),
-    ]
+    dependencies = [("LivingstoneWebpage", "0009_auto_20190616_1812")]
 
-    operations = [
-        migrations.RunPython(populate_db)
-    ]
+    operations = [migrations.RunPython(populate_db)]
