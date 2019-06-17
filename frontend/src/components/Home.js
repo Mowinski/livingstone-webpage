@@ -4,12 +4,11 @@ import Promise from "./Promise";
 import Social from "./Social";
 
 const Home = () => (
-    <>
-        <Video/>
-        <Promise/>
-        <Social/>
-    </>
+  <>
+    <Video />
+    <Promise />
+    <Social />
+  </>
 );
 
-
-export default Home
+export default Home;

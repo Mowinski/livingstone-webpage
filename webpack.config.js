@@ -9,7 +9,7 @@ module.exports = {
         }
       },
       {
-        test: /\.(gif|svg|jpg|png|mp4)$/,
+        test: /\.(gif|svg|jpg|png|mp4|webp)$/,
         loader: "file-loader",
         query: {
           publicPath: "static/frontend/",
