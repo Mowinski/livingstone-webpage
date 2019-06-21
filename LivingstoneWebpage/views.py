@@ -10,21 +10,25 @@ from django.views.generic import TemplateView
 from rest_framework import viewsets
 
 
+@method_decorator(cache_page(60 * 30), name="dispatch")
 class GalleryImageViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.GalleryImage.objects.all()
     serializer_class = serializers.GalleryImageSerializer
 
 
+@method_decorator(cache_page(60 * 30), name="dispatch")
 class OurWeaponViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.OurWeapon.objects.all()
     serializer_class = serializers.OurWeaponSerializer
 
 
+@method_decorator(cache_page(60 * 30), name="dispatch")
 class TeamMemberViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.TeamMember.objects.all()
     serializer_class = serializers.TeamMemberSerializer
 
 
+@method_decorator(cache_page(60 * 30), name="dispatch")
 class ConstantElementViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.ConstantElement.objects.all()
     serializer_class = serializers.ConstantElementSerializer
