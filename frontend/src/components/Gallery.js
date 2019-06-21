@@ -50,21 +50,25 @@ const Gallery = () => {
   }
 
   return (
-    <section className="page-section cta">
-      <div className="container">
-        <div className="row">
-          <div className="col-xl-9 mx-auto">
-            <div className="cta-inner text-center rounded">
-              <h2 className="section-heading mb-4">
-                <span className="section-heading-lower">Gallery</span>
-              </h2>
-              <div className="row">{images}</div>
+    <>
+      <div className="stripe-up-full mt-5"/>
+      <section className="cta">
+        <div className="container">
+          <div className="row">
+            <div className="col-xl-9 mx-auto">
+              <div className="cta-inner text-center rounded">
+                <h2 className="section-heading mb-4">
+                  <span className="section-heading-lower">Gallery</span>
+                </h2>
+                <div className="row">{images}</div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      {lightbox}
-    </section>
+        {lightbox}
+      </section>
+      <div className="stripe-down-full mb-5"/>
+    </>
   );
 };
 

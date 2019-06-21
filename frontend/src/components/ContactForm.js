@@ -34,14 +34,14 @@ const ContactForm = () => (
         </div>
 
         <button
-          className="btn btn-primary"
+          className="btn btn-contact"
           type="submit"
           value="Subscribe"
           name="subscribe"
           id="button-addon2"
           onChange={() => {}}
         >
-          <i className="fa fa-paper-plane" />
+          <i className="fa fa-paper-plane text-white" />
         </button>
       </div>
     </div>

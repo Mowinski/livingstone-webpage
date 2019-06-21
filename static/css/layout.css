@@ -102,8 +102,36 @@ p {
   color: #e6a756;
 }
 
+.stripe-up {
+  width: 100%;
+  height: 20px;
+  background: url("../images/golden_stripe_up.png") repeat-x;
+  background-size: cover;
+}
+
+.stripe-down {
+  width: 100%;
+  height: 20px;
+  background: url("../images/golden_stripe_down.png") repeat-x;
+  background-size: cover;
+}
+
+.stripe-up-full {
+  width: 100%;
+  height: 20px;
+  background: url("../images/golden_stripe_up.png") repeat-x;
+  background-size: cover;
+}
+
+.stripe-down-full {
+  width: 100%;
+  height: 20px;
+  background: url("../images/golden_stripe_down.png") repeat-x;
+  background-size: cover;
+}
+
 a.active {
-  color: #e6a756 !important;
+  color: #E5702E !important;
 }
 
 @media (min-width: 992px) {
@@ -111,10 +139,10 @@ a.active {
     font-size: 0.9rem;
   }
   #mainNav .navbar-nav .nav-item .nav-link:hover {
-    color: rgba(255, 255, 255, 0.4);
+    color: #E5702E
   }
   #mainNav .navbar-nav .nav-item.active .nav-link:hover {
-    color: #e6a756;
+    color: #E5702E;
   }
 }
 
@@ -246,13 +274,23 @@ a.active {
 }
 
 .btn-primary {
-  background-color: #e6a756;
-  border-color: #e6a756;
+  background-color: #E5702E;
+  border-color: #E5702E;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-  background-color: #df902a;
-  border-color: #df902a;
+  background-color: #cf5b19;
+  border-color: #cf5b19;
+}
+
+.btn-contact {
+ background-color: #e6a756 !important;
+  border-color: #e6a756 !important;
+}
+
+.btn-contact:hover, .btn-contact:focus, .btn-contact:active {
+  background-color: #df902a !important;
+  border-color: #df902a !important;
 }
 
 .font-weight-light {
@@ -268,18 +306,18 @@ a.active {
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
 	padding-left:30px;
+    background-color: #fffdd0;
 }
 #newsletter-form .btn {
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
 	padding-right:20px;
-	background:#007b5e;
-	border-color:#007b5e;
+	background:#212529;
+	border-color:#212529;
 }
 #newsletter-form .form-control:focus {
     color: #495057;
-    background-color: #fff;
-    border-color: #007b5e;
+    border-color: #fff;
     outline: 0;
     box-shadow: none;
 }
@@ -628,4 +666,9 @@ a.active {
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
+}
+
+
+.livingstone-color {
+  color: #fffdd0;
 }
