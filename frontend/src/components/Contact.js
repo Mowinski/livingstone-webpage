@@ -12,7 +12,7 @@ const Contact = () => {
         <img
           className="img-fluid rounded about-heading-img mb-3 mb-lg-0"
           src={stateContext.state.contact_image}
-          alt=""
+          alt="Contact background image"
         />
         <div className="about-heading-content">
           <div className="row">

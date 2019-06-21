@@ -7,7 +7,7 @@ from rest_framework.response import Response
 from LivingstoneWebpage import models, serializers
 
 from django.views.generic import TemplateView
-from rest_framework import viewsets, generics
+from rest_framework import viewsets
 
 
 class GalleryImageViewSet(viewsets.ReadOnlyModelViewSet):

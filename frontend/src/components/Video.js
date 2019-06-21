@@ -10,14 +10,7 @@ const Video = () => {
     <section className="page-section clearfix">
       <div className="container">
         <div className="intro text-center">
-          <video
-            className="intro-img img-fluid mb-3 mb-lg-0 rounded intro-video"
-            width="670"
-            height="465"
-            autoPlay
-            muted
-            loop
-          >
+          <video className="intro-img img-fluid mb-3 mb-lg-0 rounded intro-video" width="670" height="465" autoPlay muted loop>
             <source src={intro} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
@@ -27,11 +20,7 @@ const Video = () => {
               adventure game.
             </p>
             <div className="intro-button mx-auto">
-              <a
-                className="btn btn-primary btn-xl"
-                href={facebookLink}
-                target="_blank"
-              >
+              <a className="btn btn-primary btn-xl" href={facebookLink} target="_blank" rel="noopener" role="button" aria-label="Follow Us on Facebook">
                 Follow Us on Facebook!
               </a>
             </div>

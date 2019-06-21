@@ -24,13 +24,13 @@ const Social = () => {
           <div className="col-md-2 hide-on-mobile text-center">
           </div>
           <div className="col-md-4 col-sm-12 col-xs-12 text-right mx-auto rounded">
-            <a href={links.facebook} target="_blank" className="mx-3 livingstone-color">
+            <a href={links.facebook} target="_blank" rel="noopener" className="mx-3 livingstone-color" aria-label="Follow us on Facebook">
               <FontAwesomeIcon icon={["fab", "facebook-square"]} size="3x" />
             </a>
-            <a href={links.instagram} target="_blank" className="mx-3 livingstone-color">
+            <a href={links.instagram} target="_blank" rel="noopener" className="mx-3 livingstone-color" aria-label="Follow us on Instagram">
               <FontAwesomeIcon icon={["fab", "instagram"]} size="3x" />
             </a>
-            <a href={links.twitter} target="_blank" className="mx-3 livingstone-color">
+            <a href={links.twitter} target="_blank" rel="noopener" className="mx-3 livingstone-color" aria-label="Follow us on Twitter">
               <FontAwesomeIcon icon={["fab", "twitter"]} size="3x" />
             </a>
           </div>

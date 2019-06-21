@@ -33,13 +33,7 @@ const ContactForm = () => (
           />
         </div>
 
-        <button
-          className="btn btn-contact"
-          type="submit"
-          value="Subscribe"
-          name="subscribe"
-          id="button-addon2"
-          onChange={() => {}}
+        <button className="btn btn-contact" type="submit" value="Subscribe" name="subscribe" id="button-addon2" aria-label="Send message" onChange={() => {}}
         >
           <i className="fa fa-paper-plane text-white" />
         </button>
