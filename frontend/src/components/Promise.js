@@ -7,14 +7,14 @@ const Promise = () => (
       <div className="container">
         <div className="row">
           <div className="col-xl-9 mx-auto">
-            <div className="cta-inner text-center rounded">
+            <div className="cta-inner-paper rounded text-center paper-background">
               <h2 className="section-heading mb-4">
                 <span className="section-heading-upper">Escape Room Game</span>
                 <span className="section-heading-lower">
                   Dr Livingstone, I presume?
                 </span>
               </h2>
-              <p className="mb-0 text-left">
+              <p className="mb-0 text-left paper-text">
                 "Who are you?" he asked.
                 <br />
                 <span className="font-weight-bold">"My name is Stanley,"</span> I
@@ -44,7 +44,7 @@ const Promise = () => (
                 <br />
                 <br />
               </p>
-              <p className="mb-0 text-right">
+              <p className="mb-0 text-right paper-sign">
                 Henry M. Stanley{" "}
                 <span className="font-italic">How I Found Livingstone</span>
               </p>

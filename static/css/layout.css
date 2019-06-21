@@ -105,6 +105,9 @@ p {
 .stripe-up {
   width: 100%;
   height: 17px;
+  position: relative;
+  bottom: -3px;
+  z-index: -10;
   background: url("../images/golden_stripe_up.png") repeat-x;
   background-size: cover;
 }
@@ -112,6 +115,9 @@ p {
 .stripe-down {
   width: 100%;
   height: 17px;
+  position: relative;
+  top: -3px;
+  z-index: -10;
   background: url("../images/golden_stripe_down.png") repeat-x;
   background-size: cover;
 }
@@ -119,6 +125,9 @@ p {
 .stripe-up-full {
   width: 100%;
   height: 17px;
+  position: relative;
+  bottom: -3px;
+  z-index: -10;
   background: url("../images/golden_stripe_up.png") repeat-x;
   background-size: cover;
 }
@@ -126,6 +135,9 @@ p {
 .stripe-down-full {
   width: 100%;
   height: 17px;
+  position: relative;
+  top: -3px;
+  z-index: -10;
   background: url("../images/golden_stripe_down.png") repeat-x;
   background-size: cover;
 }
@@ -175,6 +187,26 @@ a.active {
   padding-top: 5rem;
   padding-bottom: 5rem;
   background-color: rgba(230, 167, 86, 0.9);
+}
+
+@media(max-width: 1199px) {
+  .cta .cta-inner-paper {
+    position: relative;
+    padding: 3rem;
+    margin: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.85);
+  }
+
+  .cta .cta-inner-paper:before {
+    border-radius: 0.5rem;
+    content: '';
+    position: absolute;
+    top: -0.5rem;
+    bottom: -0.5rem;
+    left: -0.5rem;
+    right: -0.5rem;
+    border: 0.25rem solid rgba(255, 255, 255, 0.85);
+  }
 }
 
 .cta .cta-inner {
@@ -673,4 +705,27 @@ a.active {
 
 .livingstone-color {
   color: #fffdd0;
+}
+
+
+@media(min-width: 1200px) {
+  .paper-background {
+    background-image: url(../images/paper_web.png);
+    background-repeat: no-repeat;
+    padding: 1rem;
+    max-width: 825px;
+    min-height: 597px;
+    position: relative;
+  }
+
+  .paper-text {
+    padding-left: 4rem;
+    line-height: 2.2rem;
+  }
+  .paper-sign {
+    position: absolute;
+    bottom: 90px;
+    right: 60px;
+    font-size: 1.2rem;
+  }
 }
