@@ -9,7 +9,7 @@ const Navigation = () => {
           to="/"
           className="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none"
         >
-          Start Bootstrap
+          Dr Livingstone, I Presume?
         </Link>
         <button
           className="navbar-toggler"

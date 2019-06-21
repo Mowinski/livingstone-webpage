@@ -9,7 +9,7 @@ const Video = () => {
   return (
     <section className="page-section clearfix">
       <div className="container">
-        <div className="intro">
+        <div className="intro text-center">
           <video
             className="intro-img img-fluid mb-3 mb-lg-0 rounded intro-video"
             width="670"
@@ -21,7 +21,7 @@ const Video = () => {
             <source src={intro} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-          <div className="intro-text left-0 text-center bg-faded p-5 rounded">
+          <div className="intro-text left-0 text-center bg-faded p-5 rounded mx-auto">
             <p className="mb-3">
               Feel the African heat in this one of a kind riddles filled 3D
               adventure game.
