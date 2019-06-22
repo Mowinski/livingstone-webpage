@@ -9,8 +9,8 @@ const Promise = () => (
           <div className="col-xl-9 mx-auto">
             <div className="cta-inner-paper rounded text-center paper-background">
               <h2 className="section-heading mb-4">
-                <span className="section-heading-upper text-left">Escape Room Game</span>
-                <span className="se ction-heading-lower text-left">
+                <span className="section-heading-upper text-left text-md-center">Escape Room Game</span>
+                <span className="section-heading-lower text-left text-md-center">
                   Dr Livingstone, I presume?
                 </span>
               </h2>

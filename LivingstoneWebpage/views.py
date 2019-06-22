@@ -40,7 +40,6 @@ class ConstantElementViewSet(viewsets.ReadOnlyModelViewSet):
         return Response(serializer.data)
 
 
-@method_decorator(cache_page(60 * 30), name="dispatch")
 class HomePageView(TemplateView):
     template_name = "index_react.html"
 
