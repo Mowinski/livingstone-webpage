@@ -2,7 +2,7 @@ import React from "react";
 
 const Promise = () => (
   <>
-    <div className="stripe-up-full mt-5"/>
+    <div className="stripe-up-full mt-5" />
     <section className="cta">
       <div className="container">
         <div className="row">
@@ -17,8 +17,10 @@ const Promise = () => (
               <p className="mb-0 text-left paper-text">
                 "Who are you?" he asked.
                 <br />
-                <span className="font-weight-bold">"My name is Stanley,"</span> I
-                answered.
+                <span className="font-weight-bold">
+                  "My name is Stanley,"
+                </span>{" "}
+                I answered.
                 <br />
                 "Ah, yes! sit down; I have important business on hand for you."
                 <br />
@@ -53,7 +55,7 @@ const Promise = () => (
         </div>
       </div>
     </section>
-    <div className="stripe-down-full mb-5"/>
+    <div className="stripe-down-full mb-5" />
   </>
 );
 

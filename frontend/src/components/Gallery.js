@@ -51,7 +51,7 @@ const Gallery = () => {
 
   return (
     <>
-      <div className="stripe-up-full mt-5"/>
+      <div className="stripe-up-full mt-5" />
       <section className="cta">
         <div className="container">
           <div className="row">
@@ -67,7 +67,7 @@ const Gallery = () => {
         </div>
         {lightbox}
       </section>
-      <div className="stripe-down-full mb-5"/>
+      <div className="stripe-down-full mb-5" />
     </>
   );
 };

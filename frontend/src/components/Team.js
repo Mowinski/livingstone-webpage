@@ -21,22 +21,22 @@ const Team = () => {
 
   return (
     <>
-      <div className="stripe-up-full mt-5"/>
+      <div className="stripe-up-full mt-5" />
       <section className="cta">
-          <div className="container">
-            <div className="row">
-              <div className="col-xl-9 mx-auto">
-                <div className="cta-inner text-center rounded">
-                  <h2 className="section-heading mb-4">
-                    <span className="section-heading-lower">Our Team</span>
-                  </h2>
-                  <div className="row">{images}</div>
-                </div>
+        <div className="container">
+          <div className="row">
+            <div className="col-xl-9 mx-auto">
+              <div className="cta-inner text-center rounded">
+                <h2 className="section-heading mb-4">
+                  <span className="section-heading-lower">Our Team</span>
+                </h2>
+                <div className="row">{images}</div>
               </div>
             </div>
           </div>
+        </div>
       </section>
-      <div className="stripe-down-full mb-5"/>
+      <div className="stripe-down-full mb-5" />
     </>
   );
 };

@@ -4,7 +4,7 @@ import { NavLink, Link } from "react-router-dom";
 const Navigation = () => {
   return (
     <>
-      <div className="stripe-up"/>
+      <div className="stripe-up" />
       <nav className="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
         <div className="container">
           <Link
@@ -80,7 +80,7 @@ const Navigation = () => {
           </div>
         </div>
       </nav>
-      <div className="stripe-down"/>
+      <div className="stripe-down" />
     </>
   );
 };
