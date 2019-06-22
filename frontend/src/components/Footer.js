@@ -1,5 +1,5 @@
 import React from "react";
-import vulpesoft from "../images/logo_vulpesoft.webp";
+import vulpesoft from "../images/logo_vulpesoft.png";
 
 const Footer = () => (
   <footer className="footer text-faded text-center py-5">

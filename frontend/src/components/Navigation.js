@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
+import logo from "../images/logo.svg";
 
 const Navigation = () => {
   return (
@@ -11,7 +12,7 @@ const Navigation = () => {
             to="/"
             className="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none"
           >
-            Dr Livingstone, I Presume?
+            <img src={logo} alt="Game logo" className="img-logo"/>
           </Link>
           <button
             className="navbar-toggler"
