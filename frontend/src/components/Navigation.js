@@ -44,7 +44,7 @@ const Navigation = () => {
                   className="nav-link text-uppercase text-expanded"
                   activeClassName="active"
                 >
-                  About
+                  About us
                 </NavLink>
               </li>
               <li className="nav-item px-lg-4">

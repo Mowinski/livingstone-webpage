@@ -7,12 +7,10 @@ const Team = () => {
     const renderImage = (image) => (
         <div className={"mb-4 col-sm-6 col-xs-12 col-md-" + image.span} key={image.id}>
             <img className="mx-auto d-flex rounded img-responsive" src={image.avatar} alt={image.name + " " + image.position}/>
-            <p>
-                <h5>
-                    {image.name}<br/>
-                    <small>{image.position}</small>
-                </h5>
-            </p>
+            <h5>
+                {image.name}<br/>
+                <small>{image.position}</small>
+            </h5>
         </div>
     );
     const images = stateContext.state.team_members.map((image) => renderImage(image));

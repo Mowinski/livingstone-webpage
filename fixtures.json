@@ -1,5 +1,4 @@
 [
-<<<<<<< HEAD
   {
     "model": "LivingstoneWebpage.ourweapon",
     "pk": 1,
@@ -92,15 +91,5 @@
       "description": "desc",
       "keywords": "key,word"
     }
-=======
-{
-  "model": "LivingstoneWebpage.galleryimage",
-  "pk": 1,
-  "fields": {
-    "image": "InsideofLivingstone3b.jpg",
-    "name": "Livingstone Game",
-    "description": "Fusce vitae pretium diam. Vestibulum sollicitudin a dolor sed convallis. Nulla nec finibus urna, sit amet convallis ipsum. Maecenas metus ante, consectetur sit amet congue a, efficitur non ante. Etiam ac odio placerat arcu efficitur commodo.",
-    "order": 0
->>>>>>> Spacing in team
   }
 ]
