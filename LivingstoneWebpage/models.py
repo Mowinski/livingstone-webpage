@@ -3,8 +3,6 @@ from django.core import validators
 from django.db import models
 from django.db.models import Max
 
-from LivingstoneWebpage import utils
-
 
 class GalleryImage(models.Model):
     image = models.ImageField(
@@ -32,10 +30,6 @@ class GalleryImage(models.Model):
     def get_highest_order(cls):
         return cls.objects.all().aggregate(Max("order"))["order__max"]
 
-    def save(self, *args, **kwargs):
-        self.image = utils.save_to_webp(self.image)
-        super(GalleryImage, self).save(*args, **kwargs)
-
     def __str__(self):
         return self.name
 
@@ -56,10 +50,6 @@ class OurWeapon(models.Model):
     @classmethod
     def get_highest_order(cls):
         return cls.objects.all().aggregate(Max("order"))["order__max"]
-
-    def save(self, *args, **kwargs):
-        self.image = utils.save_to_webp(self.image)
-        super(OurWeapon, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.name
@@ -106,10 +96,6 @@ class TeamMember(models.Model):
     def get_highest_order(cls):
         return cls.objects.all().aggregate(Max("order"))["order__max"]
 
-    def save(self, *args, **kwargs):
-        self.avatar = utils.save_to_webp(self.avatar)
-        super(TeamMember, self).save(*args, **kwargs)
-
     def __str__(self):
         return self.name
 
@@ -130,11 +116,6 @@ class ConstantElement(models.Model):
         help_text="About image: 1900x710px",
     )
     link = models.URLField(null=True, default=None, blank=True, verbose_name="Link")
-
-    def save(self, *args, **kwargs):
-        if self.image:
-            self.image = utils.save_to_webp(self.image)
-        super(ConstantElement, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.key
