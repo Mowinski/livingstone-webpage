@@ -734,3 +734,7 @@ a.active {
   min-width: 100px;
   max-width: 250px;
 }
+
+.cite {
+  font-family: 'Meddon', cursive;
+}
