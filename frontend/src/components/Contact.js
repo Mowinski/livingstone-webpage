@@ -5,6 +5,7 @@ import ContactForm from "./ContactForm";
 
 const Contact = () => {
   const stateContext = React.useContext(StateContext);
+  const component = ReactSafeHtml.components.makeElements({style: true, class: true});
 
   return (
     <section className="page-section about-heading">
@@ -18,7 +19,7 @@ const Contact = () => {
           <div className="row">
             <div className="col-xl-9 col-lg-10 mx-auto">
               <div className="bg-faded rounded p-5">
-                <ReactSafeHtml html={stateContext.state.contact_text} />
+                <ReactSafeHtml html={stateContext.state.contact_text} components={component}/>
               </div>
             </div>
           </div>

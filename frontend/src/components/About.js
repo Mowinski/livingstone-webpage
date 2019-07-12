@@ -6,6 +6,7 @@ import Weapons from "./Weapons";
 
 const About = () => {
   const stateContext = React.useContext(StateContext);
+  const component = ReactSafeHtml.components.makeElements({style: true, class: true});
   return (
     <>
       <section className="page-section about-heading">
@@ -19,7 +20,7 @@ const About = () => {
             <div className="row">
               <div className="col-xl-9 col-lg-10 mx-auto">
                 <div className="bg-faded rounded p-5">
-                  <ReactSafeHtml html={stateContext.state.about_text} />
+                  <ReactSafeHtml html={stateContext.state.about_text} components={component}/>
                 </div>
               </div>
             </div>
