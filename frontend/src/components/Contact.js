@@ -10,11 +10,6 @@ const Contact = () => {
   return (
     <section className="page-section about-heading">
       <div className="container">
-        <img
-          className="img-fluid rounded about-heading-img mb-3 mb-lg-0"
-          src={stateContext.state.contact_image}
-          alt="Contact background image"
-        />
         <div className="about-heading-content">
           <div className="row">
             <div className="col-xl-9 col-lg-10 mx-auto">
