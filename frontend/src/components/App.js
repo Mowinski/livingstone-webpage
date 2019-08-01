@@ -22,7 +22,8 @@ import {
   SET_CONTACT,
   SET_TEAM_MEMBERS,
   SET_WEAPONS,
-  SET_LINKS
+  SET_LINKS,
+  SET_NEWSLETTER,
 } from "../actions";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -60,6 +61,9 @@ const App = () => {
     async function fetchAboutText() {
       dispatch({ type: SET_ABOUT, payload: await getConstantText("about") });
     }
+    async function fetchNewsletterText() {
+      dispatch({ type: SET_NEWSLETTER, payload: await getConstantText("newsletter") });
+    }
     async function fetchContactText() {
       dispatch({
         type: SET_CONTACT,
@@ -75,9 +79,11 @@ const App = () => {
     async function fetchLinks() {
       dispatch({ type: SET_LINKS, payload: await getLinks() });
     }
+
     fetchGallery();
     fetchAboutText();
     fetchContactText();
+    fetchNewsletterText();
     fetchTeamMember();
     fetchWeapons();
     fetchLinks();

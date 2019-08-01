@@ -2,6 +2,7 @@ from django.contrib.auth.models import User
 from django.contrib.sites.models import Site
 from django.core import validators
 from django.core.mail import send_mail
+from django.conf import settings
 from django.db import models
 from django.db.models import Max
 from django.db.models.signals import post_save
@@ -154,7 +155,7 @@ class ContactMessage(models.Model):
 
 @receiver(post_save, sender=ContactMessage)
 def save_profile(sender, instance, **kwargs):
-    admin_emails = User.objects.filter(is_staff=True).values_list('email')
+    admin_emails = list(User.objects.filter(is_staff=True).values_list('email', flat=True))
     email_from = f"{instance.author} <{instance.email}>"
     send_mail(
         'New message from livingstone-game.com',
@@ -167,7 +168,7 @@ def save_profile(sender, instance, **kwargs):
     send_mail(
         "You messages to livingstone-game.com",
         'We received your message:\n\n' + instance.message,
-        'Kamil Mowinski <kamil.mowinski@vulpesoft.pl>',
+        f'Kamil Mowinski <{settings.EMAIL_HOST_USER}>',
         [instance.email],
         fail_silently=False,
     )

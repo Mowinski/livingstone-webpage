@@ -1,7 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import ContactForm from "./ContactForm";
+import NewsletterForm from "./NewsletterForm";
 import { StateContext } from "./App";
 
 const Social = () => {
@@ -14,12 +14,12 @@ const Social = () => {
       <section className="cta">
         <div className="row">
           <div className="offset-md-3 col-8 col-sm-12 col-12 text-sm-center text-center text-md-left rounded">
-            <h2 className="section-heading mb-5">Contact</h2>
+            <h2 className="section-heading mb-5">Stay contact with us</h2>
           </div>
         </div>
         <div className="row">
           <div className="offset-md-3 col-md-3 col-sm-12 col-12 rounded">
-            <ContactForm />
+            <NewsletterForm />
           </div>
           <div className="offset-md-1 col-md-5 col-sm-12 col-12 text-sm-center text-center text-md-left rounded">
             <a

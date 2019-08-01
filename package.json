@@ -26,6 +26,7 @@
     "file-loader": "^4.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
+    "react-cookies": "^0.1.1",
     "react-dom": "^16.8.6",
     "react-grid-gallery": "^0.5.4",
     "react-image-lightbox": "^5.1.0",

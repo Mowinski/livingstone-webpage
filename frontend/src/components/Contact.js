@@ -2,6 +2,7 @@ import React from "react";
 import ReactSafeHtml from "react-safe-html";
 import { StateContext } from "./App";
 import ContactForm from "./ContactForm";
+import NewsletterForm from "./NewsletterForm";
 
 const Contact = () => {
   const stateContext = React.useContext(StateContext);
@@ -18,9 +19,24 @@ const Contact = () => {
               </div>
             </div>
           </div>
+
           <div className="row mt-3">
             <div className="col-12 mx-auto">
               <ContactForm />
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-xl-9 col-lg-10 mx-auto">
+              <div className="rounded p-5">
+                <ReactSafeHtml html={stateContext.state.newsletter_text} components={component}/>
+              </div>
+            </div>
+          </div>
+
+          <div className="row mt-3">
+            <div className="col-12 mx-auto">
+              <NewsletterForm />
             </div>
           </div>
         </div>

@@ -4,7 +4,8 @@ import {
   SET_CONTACT,
   SET_TEAM_MEMBERS,
   SET_WEAPONS,
-  SET_LINKS
+  SET_LINKS,
+  SET_NEWSLETTER,
 } from "./actions";
 
 const appReducer = (state, action) => {
@@ -30,6 +31,12 @@ const appReducer = (state, action) => {
         ...state,
         contact_text: action.payload.text,
         contact_image: action.payload.image
+      };
+
+    case SET_NEWSLETTER:
+      return {
+        ...state,
+        newsletter_text: action.payload.text
       };
 
     case SET_TEAM_MEMBERS:

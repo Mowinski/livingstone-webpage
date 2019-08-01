@@ -335,6 +335,32 @@ a.active {
   border: 1px solid black;
 }
 
+.full-round {
+  border-radius: 30px;
+}
+
+.form-control {
+    height: 56px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+	padding-left:30px;
+    background-color: #fffdd0;
+}
+.btn {
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+	padding-right:20px;
+	/*background:#212529;
+	border-color:#212529;*/
+}
+.form-control:focus {
+    color: #495057;
+    border-color: #fff;
+    outline: 0;
+    box-shadow: none;
+}
+
+
 #newsletter-form .form-control {
     height: 56px;
     border-top-left-radius: 30px;
