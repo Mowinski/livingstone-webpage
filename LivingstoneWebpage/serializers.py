@@ -5,7 +5,7 @@ from rest_framework import serializers
 
 class GalleryImageSerializer(serializers.HyperlinkedModelSerializer):
     image = serializers.CharField(source='image.thumbnails.small.url', read_only=True)
-    image_full = serializers.CharField(source='image.thumbnails.large.url', read_only=True)
+    image_full = serializers.CharField(source='image.url', read_only=True)
 
     class Meta:
         model = models.GalleryImage

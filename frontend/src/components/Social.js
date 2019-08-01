@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import NewsletterForm from "./NewsletterForm";
 import { StateContext } from "./App";
+import SocialIcons from "./SocialIcons";
 
 const Social = () => {
   const stateContext = React.useContext(StateContext);
@@ -22,33 +23,7 @@ const Social = () => {
             <NewsletterForm />
           </div>
           <div className="offset-md-1 col-md-5 col-sm-12 col-12 text-sm-center text-center text-md-left rounded">
-            <a
-              href={links.facebook}
-              target="_blank"
-              rel="noopener"
-              className="mx-3 livingstone-color"
-              aria-label="Follow us on Facebook"
-            >
-              <FontAwesomeIcon icon={["fab", "facebook-square"]} size="3x" />
-            </a>
-            <a
-              href={links.instagram}
-              target="_blank"
-              rel="noopener"
-              className="mx-3 livingstone-color"
-              aria-label="Follow us on Instagram"
-            >
-              <FontAwesomeIcon icon={["fab", "instagram"]} size="3x" />
-            </a>
-            <a
-              href={links.twitter}
-              target="_blank"
-              rel="noopener"
-              className="mx-3 livingstone-color"
-              aria-label="Follow us on Twitter"
-            >
-              <FontAwesomeIcon icon={["fab", "twitter"]} size="3x" />
-            </a>
+            <SocialIcons />
           </div>
         </div>
       </section>

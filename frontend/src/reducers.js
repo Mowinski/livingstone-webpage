@@ -18,6 +18,7 @@ const appReducer = (state, action) => {
       };
 
     case SET_ABOUT:
+      if(action.payload.image)
       preloadImage(action.payload.image);
       return {
         ...state,
@@ -66,6 +67,7 @@ const appReducer = (state, action) => {
 };
 
 function preloadImage(imageSrc) {
+  if(!imageSrc) return;
   const image = new Image();
   image.src = imageSrc;
 }

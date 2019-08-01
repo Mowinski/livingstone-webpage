@@ -1,6 +1,7 @@
 import React from "react";
 import intro from "../videos/gameplay.mp4";
 import { StateContext } from "./App";
+import SocialIcons from "./SocialIcons";
 
 const Video = () => {
   const stateContext = React.useContext(StateContext);
@@ -8,7 +9,7 @@ const Video = () => {
 
   return (
     <section className="page-section clearfix">
-      <div className="container">
+      <div className="container" style={{position: "relative"}}>
         <div className="intro text-center">
           <video
             className="intro-img img-fluid mb-3 mb-lg-0 rounded intro-video"
@@ -28,7 +29,7 @@ const Video = () => {
             </p>
             <div className="intro-button mx-auto">
               <a
-                className="btn btn-primary btn-xl"
+                className="btn btn-primary btn-xl full-round"
                 href={facebookLink}
                 target="_blank"
                 rel="noopener"
@@ -39,6 +40,9 @@ const Video = () => {
               </a>
             </div>
           </div>
+        </div>
+        <div className="social-bar">
+          <SocialIcons/>
         </div>
       </div>
     </section>
