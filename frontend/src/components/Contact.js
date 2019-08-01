@@ -13,7 +13,7 @@ const Contact = () => {
         <div className="about-heading-content">
           <div className="row">
             <div className="col-xl-9 col-lg-10 mx-auto">
-              <div className="bg-faded rounded p-5">
+              <div className="rounded p-5">
                 <ReactSafeHtml html={stateContext.state.contact_text} components={component}/>
               </div>
             </div>

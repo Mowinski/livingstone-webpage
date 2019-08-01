@@ -39,9 +39,9 @@ const Gallery = () => {
     const prevIndex = (photoIndex + images.length - 1) % images.length;
     lightbox = (
       <Lightbox
-        mainSrc={stateContext.state.gallery_images[photoIndex].image}
-        nextSrc={stateContext.state.gallery_images[nextIndex].image}
-        prevSrc={stateContext.state.gallery_images[prevIndex].image}
+        mainSrc={stateContext.state.gallery_images[photoIndex].image_full}
+        nextSrc={stateContext.state.gallery_images[nextIndex].image_full}
+        prevSrc={stateContext.state.gallery_images[prevIndex].image_full}
         onCloseRequest={() => setLightboxOpen(false)}
         onMovePrevRequest={() => setPhotoIndex(prevIndex)}
         onMoveNextRequest={() => setPhotoIndex(nextIndex)}

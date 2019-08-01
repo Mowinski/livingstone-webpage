@@ -4,9 +4,12 @@ from rest_framework import serializers
 
 
 class GalleryImageSerializer(serializers.HyperlinkedModelSerializer):
+    image = serializers.CharField(source='image.thumbnails.small.url', read_only=True)
+    image_full = serializers.CharField(source='image.thumbnails.large.url', read_only=True)
+
     class Meta:
         model = models.GalleryImage
-        fields = ["image", "name", "description", "span", "id"]
+        fields = ["name", "description", "span", "id", "image_full", "image"]
 
 
 class OurWeaponSerializer(serializers.HyperlinkedModelSerializer):
@@ -27,3 +30,15 @@ class ConstantElementSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.ConstantElement
         fields = ["key", "text", "image", "link"]
+
+
+class ContactMessageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.ContactMessage
+        fields = ["author", "email", "message"]
+
+
+class ActionSerializer(serializers.Serializer):
+    status = serializers.BooleanField()
+    message = serializers.CharField(required=False)
+

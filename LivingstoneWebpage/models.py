@@ -1,11 +1,17 @@
+from django.contrib.auth.models import User
 from django.contrib.sites.models import Site
 from django.core import validators
+from django.core.mail import send_mail
 from django.db import models
 from django.db.models import Max
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+
+from thumbnails.fields import ImageField
 
 
 class GalleryImage(models.Model):
-    image = models.ImageField(
+    image = ImageField(
         verbose_name="Picture", help_text="size 900x700 px (square size 300x175px)"
     )
     name = models.CharField(
@@ -28,7 +34,8 @@ class GalleryImage(models.Model):
 
     @classmethod
     def get_highest_order(cls):
-        return cls.objects.all().aggregate(Max("order"))["order__max"]
+        value = cls.objects.all().aggregate(Max("order"))["order__max"]
+        return value if value is not None else 0
 
     def __str__(self):
         return self.name
@@ -133,3 +140,34 @@ class SeoMetaData(models.Model):
 
     def __str__(self):
         return f"{self.site.domain}"
+
+
+class ContactMessage(models.Model):
+    author = models.CharField(max_length=250, verbose_name="First and last name", default=None, blank=True, null=True)
+    email = models.EmailField(verbose_name="Email address")
+    message = models.TextField(verbose_name="Message")
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Message from {self.email} received at: {self.created_at}"
+
+
+@receiver(post_save, sender=ContactMessage)
+def save_profile(sender, instance, **kwargs):
+    admin_emails = User.objects.filter(is_staff=True).values_list('email')
+    email_from = f"{instance.author} <{instance.email}>"
+    send_mail(
+        'New message from livingstone-game.com',
+        instance.message,
+        email_from,
+        admin_emails,
+        fail_silently=False,
+    )
+
+    send_mail(
+        "You messages to livingstone-game.com",
+        'We received your message:\n\n' + instance.message,
+        'Kamil Mowinski <kamil.mowinski@vulpesoft.pl>',
+        [instance.email],
+        fail_silently=False,
+    )

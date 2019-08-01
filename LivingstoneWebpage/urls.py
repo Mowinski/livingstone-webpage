@@ -32,6 +32,8 @@ router.register("gallery/images", views.GalleryImageViewSet)
 router.register("weapons", views.OurWeaponViewSet)
 router.register("team/members", views.TeamMemberViewSet)
 router.register("constant/elements", views.ConstantElementViewSet)
+router.register("contact", views.ContactViewSet)
+
 
 urlpatterns = [
     path("api/", include(router.urls)),
