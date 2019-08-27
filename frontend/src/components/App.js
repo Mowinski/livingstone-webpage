@@ -108,4 +108,4 @@ const App = () => {
 };
 
 const wrapper = document.getElementById("app");
-wrapper ? render(<App />, wrapper) : null;
+wrapper ? ReactDOM.render(<App />, wrapper) : null;

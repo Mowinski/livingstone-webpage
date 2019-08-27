@@ -87,17 +87,6 @@ class PositionName(models.Model):
 
 
 class TeamMember(models.Model):
-    POSITION = (
-        ("pl", "Project Leader"),
-        ("lca", "Lead Concept Artist"),
-        ("lgd", "Lead Game Designer"),
-        ("ca", "Concept Artist"),
-        ("3d", "3D Graphic"),
-        ("gp", "Gameplay Programmer"),
-        ("p", "Producer"),
-        ("ss", "Social Specialist"),
-    )
-
     avatar = models.ImageField(verbose_name="Avatar")
     name = models.CharField(max_length=250, verbose_name="First and last name")
     position = models.ForeignKey(
