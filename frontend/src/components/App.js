@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import {render} from "react-snapshot";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./Home";
 import Header from "./Header";
@@ -107,4 +108,4 @@ const App = () => {
 };
 
 const wrapper = document.getElementById("app");
-wrapper ? ReactDOM.render(<App />, wrapper) : null;
+wrapper ? render(<App />, wrapper) : null;

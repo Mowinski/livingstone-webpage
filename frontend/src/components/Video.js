@@ -41,7 +41,7 @@ const Video = () => {
             </div>
           </div>
         </div>
-        <div className="social-bar">
+        <div className="social-bar d-none d-lg-block">
           <SocialIcons/>
         </div>
       </div>

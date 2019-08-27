@@ -26,7 +26,7 @@ class GalleryImageAdmin(MoveUpDownMixin, admin.ModelAdmin):
         return {"order": models.GalleryImage.get_highest_order() + 1}
 
     image_tag.short_description = "Image"
-    list_display = ["name", "image_tag", "order", "span"]
+    list_display = ["name", "image_tag", "order", "span", "site"]
     readonly_fields = ["image_tag"]
 
 
@@ -38,7 +38,7 @@ class TeamMemberAdmin(MoveUpDownMixin, admin.ModelAdmin):
         return {"order": models.TeamMember.get_highest_order() + 1}
 
     image_tag.short_description = "Avatar"
-    list_display = ["name", "image_tag", "position", "order", "span"]
+    list_display = ["name", "image_tag", "position", "order", "span", "site"]
     readonly_fields = ["image_tag"]
 
 
@@ -50,7 +50,7 @@ class OurWeaponAdmin(MoveUpDownMixin, admin.ModelAdmin):
         return {"order": models.OurWeapon.get_highest_order() + 1}
 
     image_tag.short_description = "Image"
-    list_display = ["name", "image_tag", "order", "span"]
+    list_display = ["name", "image_tag", "order", "span", "site"]
     readonly_fields = ["image_tag"]
 
 
@@ -60,3 +60,4 @@ admin.site.register(models.ConstantElement)
 admin.site.register(models.PositionName)
 admin.site.register(models.TeamMember, TeamMemberAdmin)
 admin.site.register(models.SeoMetaData)
+admin.site.register(models.ContactMessage)

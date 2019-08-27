@@ -10,22 +10,22 @@ from rest_framework import viewsets
 
 
 class GalleryImageViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = models.GalleryImage.objects.all()
+    queryset = models.GalleryImage.on_site.all()
     serializer_class = serializers.GalleryImageSerializer
 
 
 class OurWeaponViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = models.OurWeapon.objects.all()
+    queryset = models.OurWeapon.on_site.all()
     serializer_class = serializers.OurWeaponSerializer
 
 
 class TeamMemberViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = models.TeamMember.objects.all()
+    queryset = models.TeamMember.on_site.all()
     serializer_class = serializers.TeamMemberSerializer
 
 
 class ConstantElementViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = models.ConstantElement.objects.all()
+    queryset = models.ConstantElement.on_site.all()
     serializer_class = serializers.ConstantElementSerializer
 
     @action(detail=False)

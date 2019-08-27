@@ -1,4 +1,5 @@
 from django.contrib.auth.models import User
+from django.contrib.sites.managers import CurrentSiteManager
 from django.contrib.sites.models import Site
 from django.core import validators
 from django.core.mail import send_mail
@@ -32,6 +33,10 @@ class GalleryImage(models.Model):
         help_text="Digit between 1-12. How much space image should take. See bootstrap grid",
     )
     order = models.IntegerField(default=0)
+    site = models.ForeignKey(Site, on_delete=models.CASCADE)
+
+    objects = models.Manager()
+    on_site = CurrentSiteManager()
 
     @classmethod
     def get_highest_order(cls):
@@ -54,6 +59,10 @@ class OurWeapon(models.Model):
         validators=[validators.MinValueValidator(1), validators.MaxValueValidator(12)],
         help_text="Digit between 1-12. How much space avatar should take. See bootstrap grid",
     )
+    site = models.ForeignKey(Site, on_delete=models.CASCADE)
+
+    objects = models.Manager()
+    on_site = CurrentSiteManager()
 
     @classmethod
     def get_highest_order(cls):
@@ -68,6 +77,7 @@ class OurWeapon(models.Model):
 
 class PositionName(models.Model):
     name = models.CharField(max_length=100, help_text="Position name")
+    site = models.ForeignKey(Site, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
@@ -99,6 +109,10 @@ class TeamMember(models.Model):
         validators=[validators.MinValueValidator(1), validators.MaxValueValidator(12)],
         help_text="Digit between 1-12. How much space avatar should take. See bootstrap grid",
     )
+    site = models.ForeignKey(Site, on_delete=models.CASCADE)
+
+    objects = models.Manager()
+    on_site = CurrentSiteManager()
 
     @classmethod
     def get_highest_order(cls):
@@ -124,6 +138,10 @@ class ConstantElement(models.Model):
         help_text="About image: 1900x710px",
     )
     link = models.URLField(null=True, default=None, blank=True, verbose_name="Link")
+    site = models.ForeignKey(Site, on_delete=models.CASCADE)
+
+    objects = models.Manager()
+    on_site = CurrentSiteManager()
 
     def __str__(self):
         return self.key
@@ -138,6 +156,9 @@ class SeoMetaData(models.Model):
     keywords = models.CharField(
         max_length=1000, verbose_name="Keywords (comma separated)"
     )
+
+    objects = models.Manager()
+    on_site = CurrentSiteManager()
 
     def __str__(self):
         return f"{self.site.domain}"
