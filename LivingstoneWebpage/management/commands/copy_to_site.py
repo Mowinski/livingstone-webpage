@@ -16,10 +16,8 @@ class Command(BaseCommand):
         to_site = Site.objects.get(pk=int(options['to_site']))
 
         self._copy_elements(GalleryImage, from_site, to_site)
-        self._copy_elements(ConstantElement, from_site, to_site)
         self._copy_elements(OurWeapon, from_site, to_site)
         self._copy_elements(TeamMember, from_site, to_site)
-        self._copy_elements(PositionName, from_site, to_site)
 
         self.stdout.write(self.style.SUCCESS('Successfully closed poll "%s"' % to_site.domain))
 
@@ -27,6 +25,4 @@ class Command(BaseCommand):
         objects = class_.objects.filter(site=from_site)
 
         for object in objects:
-            object.pk = None
-            object.site = to_site
-            object.save()
+            class_.objects.update_or_create(uuid=object.uuid, site=to_site, defaults=object.get_fields_value())

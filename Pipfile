@@ -11,6 +11,7 @@ pillow = "*"
 djangorestframework = "*"
 django-thumbnails = "*"
 redis = "*"
+uuid = "*"
 
 [requires]
 python_version = "3.7"

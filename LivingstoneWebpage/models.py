@@ -1,3 +1,4 @@
+import uuid as uuid
 from django.contrib.auth.models import User
 from django.contrib.sites.managers import CurrentSiteManager
 from django.contrib.sites.models import Site
@@ -34,6 +35,7 @@ class GalleryImage(models.Model):
     )
     order = models.IntegerField(default=0)
     site = models.ForeignKey(Site, on_delete=models.CASCADE)
+    uuid = models.UUIDField(default=uuid.uuid4)
 
     objects = models.Manager()
     on_site = CurrentSiteManager()
@@ -42,6 +44,15 @@ class GalleryImage(models.Model):
     def get_highest_order(cls):
         value = cls.objects.all().aggregate(Max("order"))["order__max"]
         return value if value is not None else 0
+
+    def get_fields_value(self):
+        return {
+            "image": self.image,
+            "name": self.name,
+            "description": self.description,
+            "span": self.span,
+            "order": self.order,
+        }
 
     def __str__(self):
         return self.name
@@ -60,6 +71,7 @@ class OurWeapon(models.Model):
         help_text="Digit between 1-12. How much space avatar should take. See bootstrap grid",
     )
     site = models.ForeignKey(Site, on_delete=models.CASCADE)
+    uuid = models.UUIDField(default=uuid.uuid4)
 
     objects = models.Manager()
     on_site = CurrentSiteManager()
@@ -67,6 +79,14 @@ class OurWeapon(models.Model):
     @classmethod
     def get_highest_order(cls):
         return cls.objects.all().aggregate(Max("order"))["order__max"]
+
+    def get_fields_value(self):
+        return {
+            "image": self.image,
+            "name": self.name,
+            "order": self.order,
+            "span": self.span,
+        }
 
     def __str__(self):
         return self.name
@@ -77,7 +97,6 @@ class OurWeapon(models.Model):
 
 class PositionName(models.Model):
     name = models.CharField(max_length=100, help_text="Position name")
-    site = models.ForeignKey(Site, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
@@ -99,6 +118,7 @@ class TeamMember(models.Model):
         help_text="Digit between 1-12. How much space avatar should take. See bootstrap grid",
     )
     site = models.ForeignKey(Site, on_delete=models.CASCADE)
+    uuid = models.UUIDField(default=uuid.uuid4)
 
     objects = models.Manager()
     on_site = CurrentSiteManager()
@@ -106,6 +126,15 @@ class TeamMember(models.Model):
     @classmethod
     def get_highest_order(cls):
         return cls.objects.all().aggregate(Max("order"))["order__max"]
+
+    def get_fields_value(self):
+        return {
+            "avatar": self.avatar,
+            "name": self.name,
+            "position": self.position,
+            "order": self.order,
+            "span": self.span,
+        }
 
     def __str__(self):
         return self.name
@@ -116,7 +145,7 @@ class TeamMember(models.Model):
 
 class ConstantElement(models.Model):
     key = models.CharField(
-        unique=True, primary_key=True, max_length=50, verbose_name="Key"
+        primary_key=True, max_length=50, verbose_name="Key"
     )
     text = models.TextField(null=True, default=None, blank=True, verbose_name="Text")
     image = models.ImageField(
@@ -128,12 +157,24 @@ class ConstantElement(models.Model):
     )
     link = models.URLField(null=True, default=None, blank=True, verbose_name="Link")
     site = models.ForeignKey(Site, on_delete=models.CASCADE)
+    uuid = models.UUIDField(default=uuid.uuid4)
 
     objects = models.Manager()
     on_site = CurrentSiteManager()
 
+    def get_fields_value(self):
+        return {
+            "key": self.key,
+            "text": self.text,
+            "image": self.image,
+            "link": self.link,
+        }
+
     def __str__(self):
         return self.key
+
+    class Meta:
+        unique_together = (('key', 'uuid'),)
 
 
 class SeoMetaData(models.Model):
