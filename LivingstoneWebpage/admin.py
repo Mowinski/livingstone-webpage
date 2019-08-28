@@ -27,6 +27,7 @@ class GalleryImageAdmin(MoveUpDownMixin, admin.ModelAdmin):
 
     image_tag.short_description = "Image"
     list_display = ["name", "image_tag", "order", "span", "site"]
+    list_filter = ['site']
     readonly_fields = ["image_tag"]
 
 
@@ -39,6 +40,7 @@ class TeamMemberAdmin(MoveUpDownMixin, admin.ModelAdmin):
 
     image_tag.short_description = "Avatar"
     list_display = ["name", "image_tag", "position", "order", "span", "site"]
+    list_filter = ['site']
     readonly_fields = ["image_tag"]
 
 
@@ -51,6 +53,7 @@ class OurWeaponAdmin(MoveUpDownMixin, admin.ModelAdmin):
 
     image_tag.short_description = "Image"
     list_display = ["name", "image_tag", "order", "span", "site"]
+    list_filter = ['site']
     readonly_fields = ["image_tag"]
 
 
