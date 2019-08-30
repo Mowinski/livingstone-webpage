@@ -27,6 +27,7 @@ class TeamMemberViewSet(viewsets.ReadOnlyModelViewSet):
 class ConstantElementViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = models.ConstantElement.on_site.all()
     serializer_class = serializers.ConstantElementSerializer
+    lookup_field = 'key'
 
     @action(detail=False)
     def links(self, request):
