@@ -57,9 +57,14 @@ class OurWeaponAdmin(MoveUpDownMixin, admin.ModelAdmin):
     readonly_fields = ["image_tag"]
 
 
+class ConstantElementAdmin(admin.ModelAdmin):
+    list_display = ["key", "site"]
+    list_filter = ["site"]
+
+
 admin.site.register(models.GalleryImage, GalleryImageAdmin)
 admin.site.register(models.OurWeapon, OurWeaponAdmin)
-admin.site.register(models.ConstantElement)
+admin.site.register(models.ConstantElement, ConstantElementAdmin)
 admin.site.register(models.PositionName)
 admin.site.register(models.TeamMember, TeamMemberAdmin)
 admin.site.register(models.SeoMetaData)

@@ -1,7 +1,7 @@
 from django.core.management.base import BaseCommand
 from django.contrib.sites.models import Site
 
-from LivingstoneWebpage.models import GalleryImage, OurWeapon, TeamMember
+from LivingstoneWebpage.models import GalleryImage, OurWeapon, TeamMember, ConstantElement
 
 
 class Command(BaseCommand):
@@ -18,6 +18,7 @@ class Command(BaseCommand):
         self._copy_elements(GalleryImage, from_site, to_site)
         self._copy_elements(OurWeapon, from_site, to_site)
         self._copy_elements(TeamMember, from_site, to_site)
+        self._copy_elements(ConstantElement, from_site, to_site)
 
         self.stdout.write(self.style.SUCCESS('Successfully closed poll "%s"' % to_site.domain))
 

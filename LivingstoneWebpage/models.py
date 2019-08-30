@@ -144,9 +144,7 @@ class TeamMember(models.Model):
 
 
 class ConstantElement(models.Model):
-    key = models.CharField(
-        primary_key=True, max_length=50, verbose_name="Key"
-    )
+    key = models.CharField(max_length=50, verbose_name="Key")
     text = models.TextField(null=True, default=None, blank=True, verbose_name="Text")
     image = models.ImageField(
         null=True,
@@ -174,7 +172,7 @@ class ConstantElement(models.Model):
         return self.key
 
     class Meta:
-        unique_together = (('key', 'uuid'),)
+        unique_together = (('key', 'uuid', 'site'),)
 
 
 class SeoMetaData(models.Model):
