@@ -10,7 +10,7 @@ const About = () => {
   let image = <></>;
   if(stateContext.state.about_image) {
     image = <img
-              className="img-fluid rounded about-heading-img mb-3 mb-lg-0"
+              className="img-fluid rounded about-heading-img mb-3 mb-lg-5"
               src={stateContext.state.about_image}
               alt="Team photo"
             />;
