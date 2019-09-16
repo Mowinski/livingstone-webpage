@@ -22,9 +22,9 @@ const Team = () => {
         <div className="container">
           <div className="row">
             <div className="col-xl-9 mx-auto">
-              <div className="cta-inner text-center rounded">
+              <div className="cta-inner text-center rounded team-background">
                 <h2 className="section-heading mb-4">
-                  <span className="section-heading-lower">Our Team</span>
+                  <span className="section-heading-lower" style={{'color': 'white'}}>Our Team</span>
                 </h2>
                 <div className="row">{images}</div>
               </div>
