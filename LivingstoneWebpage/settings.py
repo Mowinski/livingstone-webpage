@@ -24,9 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', 'true') == 'true'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [os.environ.get('HOST'), 'localhost', '127.0.0.1', 'localhost:8000', '127.0.0.1:8000']
 
 
 # Application definition
@@ -80,8 +80,7 @@ WSGI_APPLICATION = "LivingstoneWebpage.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-DATABASES = {}
-DATABASES['default'] = dj_database_url.config(default='sqlite:///code/webpage.db')
+DATABASES = {'default': dj_database_url.config(default='sqlite:///code/webpage.db')}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -118,8 +117,8 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 STATIC_ROOT = os.environ.get('STATIC_ROOT', "")
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.environ.get('MEDIA_ROOT', os.path.join(BASE_DIR, "media"))
-SITE_ID = 1
-
+SITE_ID = int(os.environ.get('SITE_ID'))
+FILE_UPLOAD_PERMISSIONS = 0o644
 
 THUMBNAILS = {
     'METADATA': {

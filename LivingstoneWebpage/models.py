@@ -78,7 +78,8 @@ class OurWeapon(models.Model):
 
     @classmethod
     def get_highest_order(cls):
-        return cls.objects.all().aggregate(Max("order"))["order__max"]
+        value = cls.objects.all().aggregate(Max("order"))["order__max"]
+        return value if value is not None else 0
 
     def get_fields_value(self):
         return {
@@ -125,7 +126,8 @@ class TeamMember(models.Model):
 
     @classmethod
     def get_highest_order(cls):
-        return cls.objects.all().aggregate(Max("order"))["order__max"]
+        value = cls.objects.all().aggregate(Max("order"))["order__max"]
+        return value if value is not None else 0
 
     def get_fields_value(self):
         return {

@@ -9,7 +9,6 @@ services:
       - 5432
   web:
     build: .
-    command: python /code/manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/code
       - static:/static
@@ -23,17 +22,21 @@ services:
       STATIC_ROOT: /static
       MEDIA_ROOT: /media
       SECRET_KEY: "fasdfdf34870fjk34ousadf834lfhad3i743fsda"
+      SITE_ID: 1
+      DEBUG: "true"
     ports:
       - 8000:8000
     depends_on:
       - db
+
   assets:
     image: nginx
     volumes:
-    - static:/usr/share/nginx/html/static
-    - media:/usr/share/nginx/html/media
+      - static:/usr/share/nginx/html/static
+      - media:/usr/share/nginx/html/media
     ports:
-    - "8080:80"
+      - "8080:80"
+
 volumes:
   postgres_data:
   static:
