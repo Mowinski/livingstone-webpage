@@ -4,16 +4,15 @@ import { StateContext } from "./App";
 const Team = () => {
   const stateContext = React.useContext(StateContext);
 
-    const renderImage = (image) => (
-        <div className={"mb-4 col-sm-6 col-xs-12 col-md-" + image.span} key={image.id}>
-            <img className="mx-auto d-flex rounded img-responsive" src={image.avatar} alt={image.name + " " + image.position}/>
-            <h5>
-                {image.name}<br/>
-                <small>{image.position}</small>
-            </h5>
-        </div>
-    );
-    const images = stateContext.state.team_members.map((image) => renderImage(image));
+  const renderImage = (image) => (
+      <div className={"mb-4 col-sm-6 col-xs-12 col-md-" + image.span} key={image.id}>
+          <img className="mx-auto d-flex rounded img-responsive" src={image.avatar} alt={image.name + " " + image.position}/>
+          <h5>
+              <small>{image.position}</small>
+          </h5>
+      </div>
+  );
+  const images = stateContext.state.team_members.map((image) => renderImage(image));
 
   return (
     <>
@@ -22,7 +21,7 @@ const Team = () => {
         <div className="container">
           <div className="row">
             <div className="col-xl-9 mx-auto">
-              <div className="cta-inner text-center rounded team-background">
+              <div className="cta-inner text-center rounded">
                 <h2 className="section-heading mb-4">
                   <span className="section-heading-lower" style={{'color': 'white'}}>Our Team</span>
                 </h2>
